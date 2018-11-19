@@ -2,7 +2,6 @@ from django.db import models
 
 
 class Pessoa(models.Model):
-    __tablename__ = 'pessoa'
 
     cpf = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
@@ -13,7 +12,6 @@ class Pessoa(models.Model):
 
 
 class Divida(models.Model):
-    __tablename__ = 'divida'
 
     company = models.CharField(max_length=100)
     value = models.IntegerField()
