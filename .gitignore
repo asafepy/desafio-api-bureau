@@ -1,6 +1,7 @@
-# 
-*/__pycache__/
-*/*/__pycache__/
-*/*/*/__pycache__/
+# # 
+# */__pycache__/
+# */*/__pycache__/
+# */*/*/__pycache__/
 
-/docker/mysql/data/*
+# /docker/mysql/data/*
+# __pycache__/
