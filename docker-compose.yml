@@ -6,7 +6,7 @@ services:
     ports:
       - 8888:80
     volumes:
-      - ./app:/var/www/html
+      - ./base_a:/var/www/html
     working_dir: /etc/nginx
     links:
       - python
@@ -14,7 +14,7 @@ services:
     container_name: python
     build: ./docker/python
     volumes:
-      - ./app:/var/www/html
+      - ./base_a:/var/www/html
     working_dir: /var/www/html
     depends_on:
       mysql:
