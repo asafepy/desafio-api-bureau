@@ -2,14 +2,13 @@ from django.urls import path, include
 from rest_framework import (routers,
                             serializers,
                             viewsets)
-# from apps.fundrhi import views
+from apps.base_a import views
 from apps.core.views import LoginAuthToken, ObtainAuthToken, UserCreateViewSet
 
 
 router = routers.DefaultRouter()
-# router.register(r'movimento', views.MovesViewSet)
-# router.register(r'origem', views.OriginMovementViewSet)
-# router.register(r'regiao', views.RegionViewSet)
+router.register(r'pessoas', views.PessoaViewSet)
+router.register(r'dividas', views.DividaViewSet)
 
 helper_patterns = [
     path('', include('rest_framework.urls', namespace='rest_framework')),
