@@ -1,7 +1,19 @@
 version: '2'
 services:
-  basea:
+  
+  mongo:
+    image: mongo
+    hostname: mongo
+    restart: on-failure
+    container_name: mongo
+    volumes:
+      - /data/db:/data/db
+    expose:
+      - 27017
+    ports:
+      - 27017:27017
 
+  basea:
     build: ./base_a
     command: gunicorn -c gunicorn.conf base_a.wsgi
     volumes:
@@ -17,13 +29,27 @@ services:
       - ./base_b:/base_b
     ports:
       - "8080:8080"
-
+  
+  basec:
+    build:
+      context: ./base_c
+    volumes:
+      - ./base_c:/base_c
+    depends_on:
+      - mongo
+    links:
+      - mongo
+    expose:
+      - 5000
+    ports:
+      - 5000:5000
 
   nginx:
     build: ./nginx
     depends_on:
       - basea
       - baseb
+      - basec
     command: nginx -g "daemon off;"
     ports:
       - "80:80"
