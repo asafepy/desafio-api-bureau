@@ -1,18 +1,18 @@
 from rest_framework import serializers
-from .models import Pessoa, Divida
+from .models import Pessoa, Bem
 
 
-class DividaSerializer(serializers.HyperlinkedModelSerializer):
+class BemSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
-        model = Divida
-        fields = ('url', 'company', 'value', 'status', 'contract', 'pessoa')
-
+        model = Bem
+        fields = ('url', 'nome_bem', 'pessoa')
+        
 
 class PessoaSerializer(serializers.HyperlinkedModelSerializer):
 
-    dividas = serializers.StringRelatedField(many=True)
+    bens = serializers.StringRelatedField(many=True)
 
     class Meta:
         model = Pessoa
-        fields = ('url', 'cpf', 'name', 'address', 'dividas')
+        fields = ('url', 'cpf', 'nome', 'idade', 'renda', 'bens')

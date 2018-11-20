@@ -8,7 +8,7 @@ from apps.core.views import LoginAuthToken, ObtainAuthToken, UserCreateViewSet
 
 router = routers.DefaultRouter()
 router.register(r'pessoas', views.PessoaViewSet)
-router.register(r'dividas', views.DividaViewSet)
+router.register(r'bens', views.BemViewSet)
 
 helper_patterns = [
     path('', include('rest_framework.urls', namespace='rest_framework')),

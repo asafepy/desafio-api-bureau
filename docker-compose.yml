@@ -17,23 +17,23 @@ services:
       - ./base_a:/var/www/html
     working_dir: /var/www/html
     depends_on:
-      mysql:
+      postgres:
         condition: service_healthy
 
-  mysql:
-    image: mysql
-    hostname: mysql
+  postgres:
     restart: always
-    container_name: mysql
-    ports:
-      - 3306:3306
+    image: postgres
+    hostname: postgres
+    container_name: postgres
     environment:
-       - MYSQL_ROOT_PASSWORD=mypassword
-       - MYSQL_DATABASE=bureau
-       - MYSQL_USER=bureau
-       - MYSQL_PASSWORD=bureau
+      - POSTGRES_USER=bureau
+      - POSTGRES_PASSWORD=bureau
+      - POSTGRES_DB=bureau
     volumes:
-      - mysql-bureau:/var/lib/mysql
-
+      - postgres-bureau:/var/lib/postgresql
+    ports:
+      - 5432:5432
+    expose:
+      - 5432
 volumes:
-  mysql-bureau:
+  postgres-bureau:
