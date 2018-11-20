@@ -19,18 +19,21 @@ services:
     depends_on:
       mysql:
         condition: service_healthy
+
   mysql:
-    build: docker/mysql
+    image: mysql
+    hostname: mysql
+    restart: always
     container_name: mysql
     ports:
       - 3306:3306
-    volumes:
-      - data-volume:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=password
-      - MYSQL_DATABASE=django
-    healthcheck:
-      test: "exit 0"
+       - MYSQL_ROOT_PASSWORD=mypassword
+       - MYSQL_DATABASE=bureau
+       - MYSQL_USER=bureau
+       - MYSQL_PASSWORD=bureau
+    volumes:
+      - mysql-bureau:/var/lib/mysql
 
 volumes:
-  data-volume:
+  mysql-bureau:
