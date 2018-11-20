@@ -12,9 +12,13 @@ from base_c.core.utils import (name_generator, address_generator,
                           date_generator)
 
 
-class Manager(object):
-    def __init__(self, *args, **kwargs):
+class Manager:
+
+    def __init__(self):
         get_connection()
+
+    def all(self):
+        return Pessoa.objects.all()
 
     def detele(self):
         Pessoa.objects.all().delete()
@@ -22,8 +26,8 @@ class Manager(object):
     def get(self, cpf):
         return Pessoa.objects.raw({'_id':cpf}).first()
     
-    def random_create(self, id_list):
-        for person_info in id_list:
+    def random_create(self, lista_cpf):
+        for person_info in lista_cpf:
             ultima_compra = UltimaCompra(   
                 empresa=company_generator(),
                 data=date_generator(),

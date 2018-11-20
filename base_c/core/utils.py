@@ -1,5 +1,4 @@
 import datetime
-import json
 import string
 import random
 from faker import Faker
@@ -32,11 +31,3 @@ def contract_generator():
 
 def date_generator():
     return datetime.datetime.strptime(fake.date(), '%Y-%m-%d')
-
-def datetime_serializer(obj):
-    if isinstance(obj, datetime.datetime):
-        return obj.__str__()
-
-def person_trail_serializer(person_trail):
-    person_dict = person_trail.to_son().to_dict()
-    return json.loads(json.dumps(person_dict, default=datetime_serializer))

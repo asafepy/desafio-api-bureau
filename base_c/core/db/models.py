@@ -7,6 +7,9 @@ class Pessoa(MongoModel):
     transacoes = fields.EmbeddedDocumentListField('Transacao')
     ultima_compra = fields.EmbeddedDocumentField('UltimaCompra')
 
+    def __str__(self):
+        return 'Pessoa: CPF=%s' % (self.cpf)
+
 
 class Transacao(EmbeddedMongoModel):
     data = fields.DateTimeField()
