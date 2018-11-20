@@ -25,8 +25,10 @@ SECRET_KEY = 'v=bo^e=8y54-4!sxb7ix&$roeq4xy&uf#f)9v-0*6gs4t(e^)3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', 'base_a:8000', '127.0.0.1', 'localhost',]
+ALLOWED_HOSTS = ['*']
 
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = True
 
 # Application definition
 
@@ -41,7 +43,7 @@ INSTALLED_APPS = [
 
 
 OTHER_APPS = [
-    # 'corsheaders',
+    'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
 ]

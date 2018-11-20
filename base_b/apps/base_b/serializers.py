@@ -6,13 +6,13 @@ class BemSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Bem
-        fields = ('url', 'nome_bem', 'pessoa')
+        fields = ('nome_bem',)
         
 
 class PessoaSerializer(serializers.HyperlinkedModelSerializer):
 
-    bens = serializers.StringRelatedField(many=True)
+    bens = BemSerializer(many=True)
 
     class Meta:
         model = Pessoa
-        fields = ('url', 'cpf', 'nome', 'idade', 'renda', 'bens')
+        fields = ('cpf', 'nome', 'idade', 'renda', 'bens')

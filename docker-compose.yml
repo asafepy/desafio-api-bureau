@@ -1,6 +1,6 @@
 version: '2'
 services:
-  base_a:
+  basea:
 
     build: ./base_a
     command: gunicorn -c gunicorn.conf base_a.wsgi
@@ -9,12 +9,21 @@ services:
     ports:
       - "8000:8000"
 
+    
+  baseb:
+    build: ./base_b
+    command: gunicorn -c gunicorn.conf base_b.wsgi
+    volumes:
+      - ./base_b:/base_b
+    ports:
+      - "8080:8080"
+
 
   nginx:
     build: ./nginx
     depends_on:
-      - base_a
+      - basea
+      - baseb
     command: nginx -g "daemon off;"
-
     ports:
       - "80:80"

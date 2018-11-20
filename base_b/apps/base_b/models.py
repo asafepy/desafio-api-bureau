@@ -20,4 +20,4 @@ class Bem(models.Model):
                                on_delete=models.CASCADE)
 
     def __str__(self):
-        return 'Bem: Propriedade=%s, Pessoa=%s' % (self.nome_bem, self.pessoa.nome)
+        return 'Propriedade=%s' % (self.nome_bem)

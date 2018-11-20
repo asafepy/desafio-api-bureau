@@ -6,13 +6,13 @@ class DividaSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Divida
-        fields = ('url', 'company', 'value', 'status', 'contract', 'pessoa')
+        fields = ('company', 'value', 'status', 'contract')
 
 
-class PessoaSerializer(serializers.HyperlinkedModelSerializer):
+class PessoaSerializer(serializers.ModelSerializer):
 
-    dividas = serializers.StringRelatedField(many=True)
+    dividas = DividaSerializer(many=True)
 
     class Meta:
         model = Pessoa
-        fields = ('url', 'cpf', 'name', 'address', 'dividas')
+        fields = ('cpf', 'name', 'address', 'dividas')
