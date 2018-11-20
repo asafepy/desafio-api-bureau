@@ -3,7 +3,7 @@ import os
 from pymodm import connect
 
 
-LOCALHOST_URL = 'mongodb://mongo:27017/bureau'
+LOCALHOST_URL = 'mongodb://localhost:27017/base_c'
 MONGO_URL = os.getenv('MONGO_URL', LOCALHOST_URL)
 
 
