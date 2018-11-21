@@ -82,8 +82,8 @@ Web Crawler, utilizado como um programa de computador que navega pela Web de uma
 1. O usuário deverá se autenticar no ssitema na rota
 
 * http://127.0.0.1/base-a/authenticate/ ou http://127.0.0.1/base-b/authenticate/ {post}
-1. usuário -> admin
-2. senha -> admin
+* 1. usuário -> admin
+* 2. senha -> admin
 
 2. Depois você deverá informar no header da requisição o token precedido de uma string Token como no exemplo abaixao.
 3. Tanto para Base A, quanto para a Base B, deverá ser autenticado e informado o Token no request dos endpoints.
