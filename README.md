@@ -80,9 +80,10 @@ Web Crawler, utilizado como um programa de computador que navega pela Web de uma
  - Para os clientes autenticarem, a chave do token deve ser incluída no Authorizationcabeçalho HTTP. A chave deve ser prefixada pelo literal da string "Token", com espaço em branco separando as duas strings. Por exemplo:
 
 > 1. O usuário deverá se autenticar no ssitema na rota
-    > * http://127.0.0.1/base-a/authenticate/ {post}
-    > 1. usuário -> admin
-    > 2. senha -> admin
+
+> * http://127.0.0.1/base-a/authenticate/ {post}
+> 1. usuário -> admin
+> 2. senha -> admin
 
 > 2. Depois você deverá informar no header da requisição o token precedido de uma string Token como no exemplo abaixao.
 > 3. Tanto para Base A, quanto para a Base B, deverá ser autenticado e informado o Token no request dos endpoints.
