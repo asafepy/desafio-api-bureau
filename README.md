@@ -27,94 +27,24 @@ Para proteção de uma base de informação e dados deve-se seguir alguns concei
 2. Django-Rest-Framawork
 3. Json Web Token
 
+## Modelo proposta para solução da BASE A
+
 ![BASE A](https://github.com/asafepy/desafio-api-bureau/blob/develop/files/base-a.png)
 
 
-O primeiro sistema, acessa os seguintes dados da Base A:
- - CPF
- - Nome
- - Endereço
- - Lista de dívidas
+# BASE B:
+ - Também possui dados críticos, o acesso precisa ser um pouco mais rápido, além de consultas ela é utilizada para extração de dados por meio de algoritmos de aprendizado de máquina.
 
-### API deve retornar 
- - o programa que está no ar no momento,
- - a lista de programas de cada rádio,
- - a grade de programação de cada rádio.
- - caso exista algum jogo de futebol programado, ele deverá ter prioridade sobre o programa cadastrado no mesmo horário.
- 
-dos consumidores brasileiros.
- 
-# Requesitos
- - Python 3
- - Django 2
- 
-# Como instalar
+### Mantendo a arquitetura Base A
 
- 1. clone o repositório.
- 2. crie um virtualenv com o Python 3. (https://virtualenv.pypa.io/en/stable/)
- 3. ative virtualenv.
- 4. instale as dependências. (pip install -r requirements.txt)
- 5. executar o projeto.
- 
- ```console
- git clone https://github.com/asafepy/desafio-sgr.git
- cd desafio-sgr
- virtualenv -p python3 .virtualenv
- source .virtualenv/bin/activate
- git checkout develop
- pip install -r requirements.txt
- make install
-```
+- Para a Base B, manter os mesmos critérios de segurança para as informações junto com o MySQL.
 
-# Administrador (CMS):
-1. Para Publicação e gerenciamento dos programas basta acessar http://meuIp/admin
-acessar: 
-- usuário: admin
-- senha: admin
+### Serveless
+- A computação sem servidor é um modelo de execução de computação em nuvem no qual o provedor de nuvem atua como o servidor gerenciando dinamicamente a alocação de recursos da máquina. 
 
-2. Primeiro deve-se cadastrar uma rádio com seus respectivos programas acessando:  http://meuIp/admin/radio/radio/
-3. Depois acessar http://meuIp/admin/radio/grade/ para criar a grade de programação desta nova rádio.
-4. Logo depois acessar os endpoins para obter informações e dados do sistema de conteúdo.
+### Web Crawler
+Web Crawler, utilizado como um programa de computador que navega pela Web de uma forma metódica e automatizada, bastante comum ver a utilização destes sistemas autômatos para buscar alguma informação e extração de dados pela Web. 
 
-# Endpoints:
+## Modelo proposta para solução da BASE B
 
-#### 1. lista de todos os endpoins do sistema de rádio;  
-	
-  - /api/
-
-#### 2. programa que está no ar no momento;
-	
-  - /api/programa-atual/
-  - /api/programa-atual/{id_radio}/
-
-#### 3. lista de programas de cada rádio;  
-	
-  - /api/radio/
-  - /api/radio/{id_radio}/
- 
-#### 4. grade de programação de cada rádio;  
-	
-  - /api/grade/
-  - /api/grade/{id_radio}/
-
-## Apps
- 
-### radio
-- Responsável por concentrar todas as configurações ralacionadas a grade de programação.
-- models, views, serializers
-
-
-
-### core
-- Responsável por concentrar todas as configurações relacionadas a segurança e autenticação de usuário da API.
-
-
-### api
-- Responsável por concentrar todas as configurações relacionadas aos endpoints da API REST
-
-
-## Observações
-
-- A aplicação core detém configurações para autenticação via REST API e segurança dos endpoins via Token.
-- Desconsiderar a aplicação apps.core
-- Os testes eu me concentrei apenas em alguns BDD's para testar o comportamento dos endpoins.
+![BASE B](https://github.com/asafepy/desafio-api-bureau/blob/develop/files/base-b.png)
