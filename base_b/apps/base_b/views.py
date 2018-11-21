@@ -7,7 +7,9 @@ from apps.core.views import PermissionTokenLoginRequiredMixin
 from rest_framework.renderers import JSONRenderer
 from .filters import PessoaFilter
 
-class PessoaViewSet(viewsets.ModelViewSet):
+class PessoaViewSet(
+    PermissionTokenLoginRequiredMixin, viewsets.ModelViewSet):
+    
     renderer_classes = (JSONRenderer, )
     
     filter_class = PessoaFilter
@@ -15,7 +17,9 @@ class PessoaViewSet(viewsets.ModelViewSet):
     serializer_class = PessoaSerializer
 
 
-class BemViewSet(viewsets.ModelViewSet):
+class BemViewSet(
+    PermissionTokenLoginRequiredMixin, viewsets.ModelViewSet):
+    
     renderer_classes = (JSONRenderer, )
     
     queryset = Bem.objects.all()

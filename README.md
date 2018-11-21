@@ -91,11 +91,12 @@ Web Crawler, utilizado como um programa de computador que navega pela Web de uma
 #### 1. lista das informações Base A;  
 	
 - curl -X GET http://127.0.0.1/base-a/pessoas/ -H 'Authorization: Token 9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b'
-
+- curl -X GET http://127.0.0.1/base-a/pessoas/?cpf={num cpf} -H 'Authorization: Token 9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b'
 
 #### 1. lista das informações Base B;  
 
 - curl -X GET http://127.0.0.1/base-b/pessoas/ -H 'Authorization: Token 9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b'
+- curl -X GET http://127.0.0.1/base-b/pessoas/?cpf={num cpf} -H 'Authorization: Token 9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b'
 
 
 #### 1. lista das informações Base C;  

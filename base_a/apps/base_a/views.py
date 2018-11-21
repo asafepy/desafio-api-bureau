@@ -8,7 +8,8 @@ from rest_framework.renderers import JSONRenderer
 from .filters import PessoaFilter
 
 
-class PessoaViewSet(viewsets.ModelViewSet):
+class PessoaViewSet(
+    PermissionTokenLoginRequiredMixin, viewsets.ModelViewSet):
     
     renderer_classes = (JSONRenderer, )
     filter_class = PessoaFilter
@@ -16,7 +17,8 @@ class PessoaViewSet(viewsets.ModelViewSet):
     serializer_class = PessoaSerializer
 
 
-class DividaViewSet(viewsets.ModelViewSet):
+class DividaViewSet(
+    PermissionTokenLoginRequiredMixin, viewsets.ModelViewSet):
     
     renderer_classes = (JSONRenderer, )
     queryset = Divida.objects.all()
