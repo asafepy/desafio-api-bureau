@@ -9,8 +9,8 @@ from .filters import PessoaFilter
 
 class PessoaViewSet(viewsets.ModelViewSet):
     renderer_classes = (JSONRenderer, )
+    
     filter_class = PessoaFilter
-
     queryset = Pessoa.objects.all()
     serializer_class = PessoaSerializer
 
