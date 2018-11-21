@@ -5,3 +5,4 @@
 
 /docker/mysql/data/*
 __pycache__/
+.vscode
