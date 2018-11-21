@@ -76,14 +76,29 @@ Web Crawler, utilizado como um programa de computador que navega pela Web de uma
 
 # Endpoints:
 
+### Nota:
+ - Para os clientes autenticarem, a chave do token deve ser incluída no Authorizationcabeçalho HTTP. A chave deve ser prefixada pelo literal da string "Token", com espaço em branco separando as duas strings. Por exemplo:
+
+    * Authorization: Token 9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b
+
+#### para a obtenção do token
+
+1. O usuário deverá se autenticar no ssitema na rota
+    * http://127.0.0.1/base-a/authenticate/ {post}
+    1. usuário -> admin
+    2. senha -> admin
+
+2. Depois você deverá informar no header da requisição o token precedido de uma string Token como no exemplo abaixao.
+3. Tanto para Base A, quanto para a Base B, deverá ser autenticado e informado o Token no request dos endpoints.
+
 #### 1. lista das informações Base A;  
 	
-  - http://127.0.0.1/base-a/pessoas/
+  - curl -X GET http://127.0.0.1/base-a/pessoas/ -H 'Authorization: Token 9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b'
 
 
 #### 1. lista das informações Base B;  
-	
-  - http://127.0.0.1/base-a/pessoas/
+
+ - curl -X GET http://127.0.0.1/base-b/pessoas/ -H 'Authorization: Token 9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b'
 
 
 #### 1. lista das informações Base C;  
