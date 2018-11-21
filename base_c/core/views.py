@@ -1,8 +1,19 @@
 from flask_restful import Resource
 from base_c.core.db.manager import Manager
 from base_c.core.serializers import HistoricoSerializer
+from flask import Flask, abort
 
 class HistoricoList(Resource):
+    def get(self):
+        manager = Manager()
+        historico = manager.all()
+
+        if historico:
+            return HistoricoSerializer(historico).data()
+        else:
+            abort(404)
+
+class HistoricoGet(Resource):
     def get(self, cpf):
         manager = Manager()
         historico = manager.get(cpf)

@@ -100,8 +100,9 @@ Web Crawler, utilizado como um programa de computador que navega pela Web de uma
 
 
 #### 1. lista das informações Base C;  
-	
-- http://127.0.0.1/base-c/historico/
+
+- http://127.0.0.1/base-c/historico -> Todos os dados de histórico
+- http://127.0.0.1/base-c/historico/{numero cpf} -> Busca um espefícico
 
 * Para criar dados fakes na Base C basta acionar uma requisição ao endpoint 
 
