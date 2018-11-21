@@ -24,9 +24,8 @@ Para proteção de uma base de informação e dados deve-se seguir alguns concei
 ##### Minha proposta para esse microsserviço está descrita a baixo:
 
 1. MySql
-2. Django
-3. Django-Rest-Framawork
-4. Json WebToken
+2. Django-Rest-Framawork
+3. Json Web Token
 
 ![BASE A](https://github.com/asafepy/desafio-api-bureau/blob/develop/files/base-a.png)
 
