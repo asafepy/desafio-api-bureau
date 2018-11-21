@@ -3,3 +3,4 @@ Flask-RESTful==0.3.6
 gunicorn==19.8.1
 SQLAlchemy==1.2.8
 pymodm==0.4.0
+Faker

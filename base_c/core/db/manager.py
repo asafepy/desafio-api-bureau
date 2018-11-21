@@ -2,14 +2,13 @@ import random
 
 from sqlalchemy.orm import sessionmaker
 from  sqlalchemy.sql.expression import func, select
-from pycpfcnpj.gen import cpf as cpf_fake
 
 from .conn import get_connection
 from .models import Pessoa, Transacao, UltimaCompra
-from base_c.core.utils import (name_fake, address_fake,
-                               company_fake, value_fake,
-                               status_fake, contract_fake,
-                               date_fake)
+from core.utils import (name_fake, address_fake,
+                        company_fake, value_fake,
+                        status_fake, contract_fake,
+                        date_fake)
 
 
 class Manager:

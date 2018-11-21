@@ -1,6 +1,6 @@
 from flask_restful import Resource
-from base_c.core.db.manager import Manager
-from base_c.core.serializers import HistoricoSerializer
+from core.db.manager import Manager
+from core.serializers import HistoricoSerializer
 from flask import Flask, abort
 
 class HistoricoList(Resource):
