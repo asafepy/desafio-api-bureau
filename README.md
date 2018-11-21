@@ -28,7 +28,7 @@ Para proteção de uma base de informação e dados deve-se seguir alguns concei
 3. Django-Rest-Framawork
 4. Json WebToken
 
-![Arquitetura](https://github.com/arthurmoreno/desafio-bureau-credito/blob/master/images/arquitetura.svg)
+![BASE A](https://github.com/asafepy/desafio-api-bureau/blob/develop/files/base-a.png)
 
 
 O primeiro sistema, acessa os seguintes dados da Base A:
