@@ -1,6 +1,6 @@
 # INFORMAÇÕES PESSOAIS DE CRÉDITO
 
-Construa uma API REST em Django, que será responsável por entregar a grade de programação das rádios e alimentar o conteúdo dos sites e Apps do SGR.
+- Aqui trabalhamos constantemente com grande volume e complexidade de dados. Sabendo disso, precisamos que você elabore uma solução que ofereça armazenamento, processamento e disponibilização desses dados, sempre considerando que tudo deve estar conforme as boas práticas de segurança em TI.
 
 # BASE A:
  - extremamente sensível e deve ser protegida com os maiores níveis de segurança.
