@@ -72,7 +72,19 @@ Web Crawler, utilizado como um programa de computador que navega pela Web de uma
 ![BASE B](https://github.com/asafepy/desafio-api-bureau/blob/develop/files/base-c.png)
 
 
+# Como instalar
 
+ 1. clone o repositório.
+ 2. crie um virtualenv com o Python 3. (https://virtualenv.pypa.io/en/stable/)
+ 3. executar o projeto .
+ 4. make run
+ 
+ ```console
+ git clone https://github.com/asafepy/desafio-api-bureau.git
+ cd desafio-api-bureau
+ $ make run
+ 
+```
 
 # Endpoints:
 
