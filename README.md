@@ -70,3 +70,26 @@ Web Crawler, utilizado como um programa de computador que navega pela Web de uma
 ### Modelo proposta para solução da BASE C
 
 ![BASE B](https://github.com/asafepy/desafio-api-bureau/blob/develop/files/base-c.png)
+
+
+
+
+# Endpoints:
+
+#### 1. lista das informações Base A;  
+	
+  - http://127.0.0.1/base-a/pessoas/
+
+
+#### 1. lista das informações Base B;  
+	
+  - http://127.0.0.1/base-a/pessoas/
+
+
+#### 1. lista das informações Base C;  
+	
+  - http://127.0.0.1/base-c/historico/
+
+* Para criar dados fakes na Base C basta acionar uma requisição ao endpoint 
+
+  - http://127.0.0.1/base-c/historico/ {metodo POST}
